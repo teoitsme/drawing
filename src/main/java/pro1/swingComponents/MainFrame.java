@@ -1,5 +1,9 @@
 package pro1.swingComponents;
 
+import pro1.drawingModel.Drawable;
+import pro1.drawingModel.Rectangle;
+import pro1.utils.ColorUtils;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
@@ -26,15 +30,16 @@ public class MainFrame extends JFrame {
         displayPanel.addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent e) {
-                //displayPanel.setDrawable(example(e.getX(), e.getY()));
+                displayPanel.setDrawable(example(e.getX(), e.getY()));
             }
         });
     }
 
-//    private Drawable example(int x, int y) {
-//        var color = ColorUtils.randomColor();
-//        var d1 = new Rectangle(0, 0, 150, 250, color);
+    private Drawable example(int x, int y) {
+        var color = ColorUtils.randomColor();
+        var d1 = new Rectangle(0, 0, 150, 250, color);
+        return d1;
 //        var d2 = new Text(0, 0, color);
 //        return new Group(new Drawable[]{d1, d2}, x, y, 10, 1, 1);
-//    }
+    }
 }
