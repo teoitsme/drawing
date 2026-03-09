@@ -1,0 +1,19 @@
+package pro1.drawingModel;
+
+import java.awt.*;
+
+public class Text extends XYShape {
+    private String text;
+
+    public Text(int x, int y, String text) {
+
+        super(x, y);
+        this.text = text;
+
+    }
+
+    @Override
+    public void draw(Graphics2D g) {
+        g.drawString(text, x, y);
+    }
+}
