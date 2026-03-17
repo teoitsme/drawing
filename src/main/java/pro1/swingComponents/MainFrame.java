@@ -10,9 +10,14 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 public class MainFrame extends JFrame {
-    DisplayPanel displayPanel;
-    //int x;
-    //int y;
+    private DisplayPanel displayPanel;
+    private int x;
+    private int y;
+    private String color = "#000000";
+
+    public void setColor(String color) {
+        this.color = color;
+    }
 
     public MainFrame() {
         this.setTitle("PRO1 Drawing");
@@ -24,8 +29,7 @@ public class MainFrame extends JFrame {
         this.displayPanel = new DisplayPanel();
         this.add(displayPanel, BorderLayout.CENTER);
 
-        JPanel leftPanel = new JPanel();
-        leftPanel.setPreferredSize(new Dimension(200, 0));
+        JPanel leftPanel = new OptionsPanel(this);
         this.add(leftPanel, BorderLayout.WEST);
 
         /*
@@ -39,11 +43,16 @@ public class MainFrame extends JFrame {
         this.displayPanel.addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent e) {
-                //MainFrame.this.x = e.getX();
-                //MainFrame.this.y = e.getY();
-                displayPanel.setDrawable(example(e.getX(), e.getY()));
+                MainFrame.this.x = e.getX();
+                MainFrame.this.y = e.getY();
+                //displayPanel.setDrawable(example(e.getX(), e.getY()));
+                MainFrame.this.showExample();
             }
         } );
+    }
+
+    public void showExample() {
+        MainFrame.this.displayPanel.setDrawable(this.example());
     }
 
     private Drawable example(int x, int y) {
