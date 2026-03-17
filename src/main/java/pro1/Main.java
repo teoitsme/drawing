@@ -1,8 +1,6 @@
 package pro1;
 
-import pro1.drawingModel.*;
-import pro1.swingComponents.MainFrame;
-
+import pro1.swingComponents.MainFrame; // Důležitý import pro propojení s oknem
 import javax.swing.*;
 
 public class Main {

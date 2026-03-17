@@ -1,13 +1,11 @@
 package pro1.swingComponents;
 
 import pro1.drawingModel.Drawable;
-
 import javax.swing.*;
 import java.awt.*;
 
 public class DisplayPanel extends JPanel {
-
-    Drawable drawable = null;
+    private Drawable drawable = null;
 
     public DisplayPanel() {
         this.setBackground(Color.WHITE);
@@ -15,13 +13,14 @@ public class DisplayPanel extends JPanel {
 
     public void setDrawable(Drawable drawable) {
         this.drawable = drawable;
-        this.repaint();
+        this.repaint(); // Zajistí překreslení při změně
     }
 
     @Override
-    public void paintComponent(Graphics g) {
+    protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-        if (this.drawable != null)
-            this.drawable.draw((Graphics2D) g);
+        if (this.drawable != null) {
+            this.drawable.draw((Graphics2D) g); // Volá kreslení objektu
+        }
     }
 }
