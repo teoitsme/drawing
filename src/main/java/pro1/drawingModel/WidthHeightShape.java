@@ -10,5 +10,4 @@ public abstract class WidthHeightShape extends XYShape {
         this.width = width;
         this.height = height;
     }
-
 }

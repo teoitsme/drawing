@@ -12,7 +12,7 @@ public class Rectangle extends WidthHeightShape {
 
     @Override
     public void draw(Graphics2D g) {
-        g.setColor(Color.decode(color));
-        g.fillRect(x, y, width, height);
+        g.setColor(Color.decode(this.color));
+        g.fillRect(this.x, this.y, this.width, this.height);
     }
 }

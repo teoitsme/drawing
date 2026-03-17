@@ -1,7 +1,6 @@
 package pro1.drawingModel;
 
 public abstract class XYShape implements Drawable {
-
     protected int x;
     protected int y;
 
@@ -9,5 +8,4 @@ public abstract class XYShape implements Drawable {
         this.x = x;
         this.y = y;
     }
-
 }

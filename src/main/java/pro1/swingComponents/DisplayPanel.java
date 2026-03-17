@@ -15,13 +15,13 @@ public class DisplayPanel extends JPanel {
 
     public void setDrawable(Drawable drawable) {
         this.drawable = drawable;
-        repaint();
+        this.repaint();
     }
 
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
-        if (drawable != null)
-            drawable.draw((Graphics2D) g);
+        if (this.drawable != null)
+            this.drawable.draw((Graphics2D) g);
     }
 }

@@ -1,10 +1,12 @@
 package pro1.drawingModel;
 
 import pro1.Main;
+
 import java.awt.*;
 import java.awt.geom.AffineTransform;
 
 public class Group extends XYShape {
+
     Drawable[] items;
     double rotationDegrees;
     double scaleX;
@@ -21,11 +23,11 @@ public class Group extends XYShape {
     @Override
     public void draw(Graphics2D g) {
         AffineTransform transform = g.getTransform();
-        g.translate(x, y);
-        g.rotate(Math.toRadians(rotationDegrees));
+        g.translate(this.x, this.y);
+        g.rotate(Math.toRadians(this.rotationDegrees));
         g.scale(scaleX, scaleY);
 
-        for(var item : items) {
+        for(var item : this.items) {
             item.draw(g);
         }
 
