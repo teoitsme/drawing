@@ -1,6 +1,6 @@
 package pro1;
 
-import pro1.swingComponents.MainFrame; // Důležitý import pro propojení s oknem
+import pro1.swingComponents.MainFrame;
 import javax.swing.*;
 
 public class Main {

@@ -17,20 +17,18 @@ public class MainFrame extends JFrame {
     public MainFrame() {
         this.setTitle("PRO1 - Úkol Lomená čára");
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
-        this.setExtendedState(JFrame.MAXIMIZED_BOTH); // Okno přes celou obrazovku [zadání]
+        this.setExtendedState(JFrame.MAXIMIZED_BOTH);
 
-        // Inicializace panelů
         this.displayPanel = new DisplayPanel();
         this.add(this.displayPanel, BorderLayout.CENTER);
 
         OptionsPanel options = new OptionsPanel(this);
         this.add(options, BorderLayout.WEST);
 
-        // Posluchač kliknutí do hlavního panelu
         this.displayPanel.addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent e) {
-                points.add(e.getPoint()); // Přidá nový vrchol [zadání]
+                points.add(e.getPoint());
                 updateDrawing();
             }
         });
@@ -39,11 +37,9 @@ public class MainFrame extends JFrame {
     }
 
     public void updateDrawing() {
-        // Pošleme aktuální data do DisplayPanelu k vykreslení
         this.displayPanel.setDrawable(new PolylineDrawing(points, thickness, isRed));
     }
 
-    // Metody volané z OptionsPanelu
     public void setThickness(int t) { this.thickness = t; updateDrawing(); }
     public void setRed(boolean r) { this.isRed = r; updateDrawing(); }
     public void reset() { points.clear(); updateDrawing(); }

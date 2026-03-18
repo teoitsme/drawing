@@ -13,14 +13,14 @@ public class DisplayPanel extends JPanel {
 
     public void setDrawable(Drawable drawable) {
         this.drawable = drawable;
-        this.repaint(); // Zajistí překreslení při změně
+        this.repaint();
     }
 
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         if (this.drawable != null) {
-            this.drawable.draw((Graphics2D) g); // Volá kreslení objektu
+            this.drawable.draw((Graphics2D) g);
         }
     }
 }
